@@ -1,0 +1,2 @@
+electronとangularを連携して見ている
+勉強用の作成

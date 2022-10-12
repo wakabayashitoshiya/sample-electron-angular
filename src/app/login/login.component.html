@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Login</h1>
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <table>
+      <tr>
+        <td><label for="id">名前</label></td>
+        <td><input type="text" id="id" required [(ngModel)]="model.loginId" name="idName" #idValid="ngModel">
+          <span [hidden]="idValid.valid || idValid.pristine">
+            名前を入力して下さい。
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="password">パスワード</label></td>
+        <td><input type="text" id="password" required [(ngModel)]="model.password" name="passName"
+            #passValid="ngModel">
+          <span [hidden]="passValid.valid || passValid.pristine">
+            パスワードを入力して下さい。
+          </span>
+        </td>
+      </tr>
+    </table>
+    <button type="submit" [disabled]="!loginForm.form.valid">ログイン</button>
+    <br /> {{model.message}}
+  </form>
+</div>
